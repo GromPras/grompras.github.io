@@ -97,6 +97,43 @@ if (document.getElementById('project-intake-form')) {
   });
 }
 
+// Mobile menu functionality
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileNav = document.getElementById('mobile-nav');
+
+if (mobileMenuBtn && mobileNav) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (mobileNav.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuBtn.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  mobileNav.addEventListener('click', (e) => {
+    if (e.target === mobileNav) {
+      mobileMenuBtn.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 // Initialize animations
 window.addEventListener("load", () => {
   // Add any additional initialization here
