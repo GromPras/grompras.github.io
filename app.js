@@ -81,8 +81,8 @@ if (document.getElementById('project-intake-form')) {
     });
     
     if (isValid) {
-      // Here you would normally send the form data to your server
-      alert('Thank you for your submission! We\'ll get back to you soon.');
+      // Demo mode message
+      alert('Demo Mode: Form submission successful! In production, this would send your information to the server. For real inquiries, please use LinkedIn or GitHub links provided above.');
       // this.reset(); // Uncomment to reset form after submission
     } else {
       alert('Please fill in all required fields.');
