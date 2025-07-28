@@ -62,6 +62,41 @@ function typeWriter(element, text, speed = 100) {
   type();
 }
 
+// Form validation and submission
+if (document.getElementById('project-intake-form')) {
+  document.getElementById('project-intake-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Basic validation
+    const requiredFields = document.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = 'var(--red)';
+        isValid = false;
+      } else {
+        field.style.borderColor = 'var(--bg3)';
+      }
+    });
+    
+    if (isValid) {
+      // Here you would normally send the form data to your server
+      alert('Thank you for your submission! We\'ll get back to you soon.');
+      // this.reset(); // Uncomment to reset form after submission
+    } else {
+      alert('Please fill in all required fields.');
+    }
+  });
+  
+  // Remove error styling when user starts typing
+  document.querySelectorAll('.form-input, .form-textarea').forEach(field => {
+    field.addEventListener('input', function() {
+      this.style.borderColor = 'var(--bg3)';
+    });
+  });
+}
+
 // Initialize animations
 window.addEventListener("load", () => {
   // Add any additional initialization here

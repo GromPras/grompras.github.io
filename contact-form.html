@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Intake Form - GromPras Python Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html" style="color: var(--orange); text-decoration: none;">GromPras</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact-form.html" class="active">Get Started</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero services-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Let's Work Together</h1>
+          <p class="hero-subtitle">
+            Tell us about your project and we'll get back to you soon
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="contact">
+      <div class="container">
+        <div class="form-container">
+          <form id="project-intake-form" action="#" method="POST">
+            
+            <!-- Contact Information -->
+            <div class="form-section">
+              <h2 class="form-section-title">
+                <span>👤</span>
+                Contact Information
+              </h2>
+              
+              <div class="form-group">
+                <label for="fullName" class="form-label">Full Name <span class="form-required">*</span></label>
+                <input type="text" id="fullName" name="fullName" class="form-input" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="company" class="form-label">Company</label>
+                <input type="text" id="company" name="company" class="form-input">
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="form-label">Email <span class="form-required">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" id="phone" name="phone" class="form-input">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Best time to contact you</label>
+                <div class="form-radio-group">
+                  <div class="form-radio-item">
+                    <input type="radio" id="morning" name="contactTime" value="morning" class="form-radio">
+                    <label for="morning" class="form-checkbox-label">Morning (9h-12h)</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="afternoon" name="contactTime" value="afternoon" class="form-radio">
+                    <label for="afternoon" class="form-checkbox-label">Afternoon (12h-17h)</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="evening" name="contactTime" value="evening" class="form-radio">
+                    <label for="evening" class="form-checkbox-label">Evening (17h-19h)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- About Your Business -->
+            <div class="form-section">
+              <h2 class="form-section-title">
+                <span>🏢</span>
+                About Your Business
+              </h2>
+              
+              <div class="form-group">
+                <label for="businessDescription" class="form-label">What does your company do? <span class="form-required">*</span></label>
+                <div class="form-description">Please describe your products/services and target market</div>
+                <textarea id="businessDescription" name="businessDescription" class="form-textarea" required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="businessAge" class="form-label">How long have you been in business?</label>
+                <input type="text" id="businessAge" name="businessAge" class="form-input">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">What's your company size?</label>
+                <div class="form-radio-group">
+                  <div class="form-radio-item">
+                    <input type="radio" id="solo" name="companySize" value="solo" class="form-radio">
+                    <label for="solo" class="form-checkbox-label">Solo/Individual</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="small" name="companySize" value="small" class="form-radio">
+                    <label for="small" class="form-checkbox-label">2-10 employees</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="medium" name="companySize" value="medium" class="form-radio">
+                    <label for="medium" class="form-checkbox-label">11-50 employees</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="large" name="companySize" value="large" class="form-radio">
+                    <label for="large" class="form-checkbox-label">50+ employees</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Your Project -->
+            <div class="form-section">
+              <h2 class="form-section-title">
+                <span>🚀</span>
+                Your Project
+              </h2>
+              
+              <div class="form-group">
+                <label class="form-label">What type of project do you need? <span class="form-required">*</span></label>
+                <div class="form-checkbox-group">
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="newWebsite" name="projectType[]" value="newWebsite" class="form-checkbox">
+                    <label for="newWebsite" class="form-checkbox-label">New website from scratch</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="redesign" name="projectType[]" value="redesign" class="form-checkbox">
+                    <label for="redesign" class="form-checkbox-label">Website redesign</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="webApp" name="projectType[]" value="webApp" class="form-checkbox">
+                    <label for="webApp" class="form-checkbox-label">Web application</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="ecommerce" name="projectType[]" value="ecommerce" class="form-checkbox">
+                    <label for="ecommerce" class="form-checkbox-label">E-commerce site</label>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-top: 1rem;">
+                  <label for="projectTypeOther" class="form-label">Other (please specify):</label>
+                  <input type="text" id="projectTypeOther" name="projectTypeOther" class="form-input">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="currentWebsite" class="form-label">Current website (if any)</label>
+                <input type="url" id="currentWebsite" name="currentWebsite" class="form-input" placeholder="https://example.com">
+              </div>
+              
+              <div class="form-group">
+                <label for="problems" class="form-label">What are the main problems you're trying to solve? <span class="form-required">*</span></label>
+                <div class="form-description">Be specific about pain points</div>
+                <textarea id="problems" name="problems" class="form-textarea" required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="goal1" class="form-label">What are your top 3 goals for this project? <span class="form-required">*</span></label>
+                <input type="text" id="goal1" name="goal1" class="form-input" placeholder="1. First goal" required style="margin-bottom: 0.5rem;">
+                <input type="text" id="goal2" name="goal2" class="form-input" placeholder="2. Second goal" style="margin-bottom: 0.5rem;">
+                <input type="text" id="goal3" name="goal3" class="form-input" placeholder="3. Third goal">
+              </div>
+            </div>
+
+            <!-- Project Scope -->
+            <div class="form-section">
+              <h2 class="form-section-title">
+                <span>⚙️</span>
+                Project Scope
+              </h2>
+              
+              <div class="form-group">
+                <label class="form-label">Which features do you need?</label>
+                <div class="form-description">Check all that apply</div>
+                <div class="form-checkbox-group">
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="contactForms" name="features[]" value="contactForms" class="form-checkbox">
+                    <label for="contactForms" class="form-checkbox-label">Contact forms</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="blog" name="features[]" value="blog" class="form-checkbox">
+                    <label for="blog" class="form-checkbox-label">Blog/News section</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="userAccounts" name="features[]" value="userAccounts" class="form-checkbox">
+                    <label for="userAccounts" class="form-checkbox-label">User accounts/login</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="payments" name="features[]" value="payments" class="form-checkbox">
+                    <label for="payments" class="form-checkbox-label">Payment processing</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="newsletter" name="features[]" value="newsletter" class="form-checkbox">
+                    <label for="newsletter" class="form-checkbox-label">Email newsletter</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="multilanguage" name="features[]" value="multilanguage" class="form-checkbox">
+                    <label for="multilanguage" class="form-checkbox-label">Multi-language</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="search" name="features[]" value="search" class="form-checkbox">
+                    <label for="search" class="form-checkbox-label">Search functionality</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="social" name="features[]" value="social" class="form-checkbox">
+                    <label for="social" class="form-checkbox-label">Social media integration</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="analytics" name="features[]" value="analytics" class="form-checkbox">
+                    <label for="analytics" class="form-checkbox-label">Analytics/Reporting</label>
+                  </div>
+                  <div class="form-checkbox-item">
+                    <input type="checkbox" id="admin" name="features[]" value="admin" class="form-checkbox">
+                    <label for="admin" class="form-checkbox-label">Admin dashboard</label>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-top: 1rem;">
+                  <label for="featuresOther" class="form-label">Other features:</label>
+                  <input type="text" id="featuresOther" name="featuresOther" class="form-input">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Do you have existing content?</label>
+                <div class="form-radio-group">
+                  <div class="form-radio-item">
+                    <input type="radio" id="contentReady" name="existingContent" value="ready" class="form-radio">
+                    <label for="contentReady" class="form-checkbox-label">Yes, all content is ready</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="contentSome" name="existingContent" value="some" class="form-radio">
+                    <label for="contentSome" class="form-checkbox-label">Some content exists</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="contentNone" name="existingContent" value="none" class="form-radio">
+                    <label for="contentNone" class="form-checkbox-label">No, we need help with content</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Do you have brand materials?</label>
+                <div class="form-radio-group">
+                  <div class="form-radio-item">
+                    <input type="radio" id="brandComplete" name="brandMaterials" value="complete" class="form-radio">
+                    <label for="brandComplete" class="form-checkbox-label">Complete brand guide</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="brandBasic" name="brandMaterials" value="basic" class="form-radio">
+                    <label for="brandBasic" class="form-checkbox-label">Logo and colors only</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="brandNone" name="brandMaterials" value="none" class="form-radio">
+                    <label for="brandNone" class="form-checkbox-label">Nothing yet</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline & Budget -->
+            <div class="form-section">
+              <h2 class="form-section-title">
+                <span>📅</span>
+                Timeline & Budget
+              </h2>
+              
+              <div class="form-group">
+                <label class="form-label">When do you need this completed? <span class="form-required">*</span></label>
+                <div class="form-radio-group">
+                  <div class="form-radio-item">
+                    <input type="radio" id="asap" name="timeline" value="asap" class="form-radio">
+                    <label for="asap" class="form-checkbox-label">ASAP</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="month1" name="timeline" value="month1" class="form-radio">
+                    <label for="month1" class="form-checkbox-label">Within 1 month</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="months23" name="timeline" value="months23" class="form-radio">
+                    <label for="months23" class="form-checkbox-label">Within 2-3 months</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="months46" name="timeline" value="months46" class="form-radio">
+                    <label for="months46" class="form-checkbox-label">Within 4-6 months</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="flexible" name="timeline" value="flexible" class="form-radio">
+                    <label for="flexible" class="form-checkbox-label">Flexible timeline</label>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">What's your budget range for this project?</label>
+                <div class="form-description">This helps us propose appropriate solutions</div>
+                <div class="form-radio-group">
+                  <div class="form-radio-item">
+                    <input type="radio" id="budget1" name="budget" value="under2k" class="form-radio">
+                    <label for="budget1" class="form-checkbox-label">Less than 2,000€</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="budget2" name="budget" value="2k5k" class="form-radio">
+                    <label for="budget2" class="form-checkbox-label">2,000€ - 5,000€</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="budget3" name="budget" value="5k10k" class="form-radio">
+                    <label for="budget3" class="form-checkbox-label">5,000€ - 10,000€</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="budget4" name="budget" value="10k20k" class="form-radio">
+                    <label for="budget4" class="form-checkbox-label">10,000€ - 20,000€</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="budget5" name="budget" value="over20k" class="form-radio">
+                    <label for="budget5" class="form-checkbox-label">More than 20,000€</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="budgetUnsure" name="budget" value="unsure" class="form-radio">
+                    <label for="budgetUnsure" class="form-checkbox-label">Not sure yet</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Decision Making -->
+            <div class="form-section">
+              <h2 class="form-section-title">
+                <span>👥</span>
+                Decision Making
+              </h2>
+              
+              <div class="form-group">
+                <label for="teamMember1" class="form-label">Who will be involved in this project?</label>
+                <div class="form-description">Name and role</div>
+                <input type="text" id="teamMember1" name="teamMember1" class="form-input" placeholder="1. Name (Role)" style="margin-bottom: 0.5rem;">
+                <input type="text" id="teamMember2" name="teamMember2" class="form-input" placeholder="2. Name (Role)" style="margin-bottom: 0.5rem;">
+                <input type="text" id="teamMember3" name="teamMember3" class="form-input" placeholder="3. Name (Role)">
+              </div>
+              
+              <div class="form-group">
+                <label for="finalApproval" class="form-label">Who has final approval authority?</label>
+                <input type="text" id="finalApproval" name="finalApproval" class="form-input">
+              </div>
+              
+              <div class="form-group">
+                <label for="referralSource" class="form-label">How did you hear about us?</label>
+                <input type="text" id="referralSource" name="referralSource" class="form-input">
+              </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="form-section">
+              <h2 class="form-section-title">
+                <span>💬</span>
+                Additional Information
+              </h2>
+              
+              <div class="form-group">
+                <label for="questions" class="form-label">What questions do you have for us?</label>
+                <textarea id="questions" name="questions" class="form-textarea"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="additionalInfo" class="form-label">Is there anything else we should know?</label>
+                <textarea id="additionalInfo" name="additionalInfo" class="form-textarea"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Preferred method of communication</label>
+                <div class="form-radio-group">
+                  <div class="form-radio-item">
+                    <input type="radio" id="commEmail" name="preferredComm" value="email" class="form-radio">
+                    <label for="commEmail" class="form-checkbox-label">Email</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="commPhone" name="preferredComm" value="phone" class="form-radio">
+                    <label for="commPhone" class="form-checkbox-label">Phone</label>
+                  </div>
+                  <div class="form-radio-item">
+                    <input type="radio" id="commVideo" name="preferredComm" value="video" class="form-radio">
+                    <label for="commVideo" class="form-checkbox-label">Video call</label>
+                  </div>
+                </div>
+              </div>
+              
+              <button type="submit" class="form-submit">Submit Project Request</button>
+            </div>
+          </form>
+
+          <!-- Next Steps -->
+          <div class="next-steps">
+            <h3 class="next-steps-title">What Happens Next?</h3>
+            <ol class="next-steps-list">
+              <li>We'll review your information</li>
+              <li>We'll email you to schedule a discovery call</li>
+              <li>After the call, we'll send a detailed proposal</li>
+            </ol>
+            <p style="color: var(--fg3); margin-top: 1rem; font-style: italic;">
+              Thank you for taking the time to fill out this form. We look forward to discussing your project!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p style="color: var(--fg3)">
+          © 2025 GromPras. Professional Python development services.
+        </p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
